@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         tags = "@wip",
-        glue = {"steps"},
+        glue = {"hooks", "steps"},
         plugin = {"html:target/generated-reports/cucumber.html", "json:target/generated-reports/cucumber.json"},
         features = {"src/test/resources/features"})
 
