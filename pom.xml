@@ -15,7 +15,7 @@
         <cucumber.version>7.20.1</cucumber.version>
         <selenium.version>4.13.0</selenium.version>
         <commons.version>2.17.0</commons.version>
-        <junit.version>7.20.1</junit.version>
+        <testng.version>7.20.1</testng.version>
         <java.faker.version>1.0.2</java.faker.version>
         <extent.reports.version>5.0.9</extent.reports.version>
         <extent.reports.cucumber7.adapter>1.13.0</extent.reports.cucumber7.adapter>
@@ -44,9 +44,8 @@
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${testng.version}</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -68,19 +67,5 @@
             <artifactId>extentreports-cucumber7-adapter</artifactId>
             <version>${extent.reports.cucumber7.adapter}</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.11.3</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.11.3</version>
-            <scope>compile</scope>
-        </dependency>
-
     </dependencies>
 </project>

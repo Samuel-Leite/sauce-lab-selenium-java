@@ -1,9 +1,10 @@
 package page;
 
 import attributes.HomeAttributes;
-import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import java.time.Duration;
 
@@ -13,17 +14,18 @@ public class HomePage extends HomeAttributes {
 
     public HomePage(WebDriver driver){
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     public void validarLoginSucesso(){
-        String titulo = driver.findElement(By.xpath("//div[contains(text(), 'Swag Labs')]")).getText();
-        Assertions.assertEquals("Swag Labs", titulo);
+        String titulo = mensagemLoginSucesso.getText();
+        Assert.assertEquals("Swag Labs", titulo);
     }
 
     public void efetuarLogout(){
-        driver.findElement(By.id("react-burger-menu-btn")).click();
+        menuHamburguer.click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.findElement(By.id("logout_sidebar_link")).click();
+        botaoLogout.click();
         driver.quit();
     }
 }
